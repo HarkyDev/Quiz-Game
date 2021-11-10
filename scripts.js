@@ -1,10 +1,30 @@
 // 1 start button starts game
 // 2 when answer is selected next question is then presented
-// 3 wrong answers cut time on the timer
+// 3 wrong btncut time on the timer
 // 4 game ends after the questions or when timers is done
 // 5 can save initials and add to high score 
+
+
+
+//what needs to be done
+// in order of importantce
+        // create end game/ high scores screen
+        // set if timer reaches 0 end screen
+        // set if question index=.length end screen
+        // add count function for correct answers 
+        // and - time function on timevalue if answer wrong
+
+
+
+
+
+
+
+
 const startButton = document.getElementById('start-btn')
 const mainGame = document.getElementById('game-container')
+var questionElement = document.getElementById('questiontext')
+var answerButtonsElement = document.getElementById('answers-btn')
 let score = 0
 
 startButton.addEventListener('click', startQuiz);
@@ -15,6 +35,7 @@ function startQuiz(){
     mainGame.classList.remove('hide'); 
     startTimer()   
     score = 0 
+    showQuestion()
 }
 
 
@@ -40,21 +61,124 @@ var timerDisplayEl = document.getElementById("timer")
 
 var startTimer = function(){
     let timerValue = 300
+
+
     console.log(timerValue)
+
+
+    
     var timerMinusSeconds = function(){
         timerValue --
+        
         timerDisplayEl.innerHTML = "seconds left: " + timerValue
         if (timerValue==0){
         clearInterval(timerId)
         }
     }
 
-    const timerId = setInterval(timerMinusSeconds,1000)
-
-    timerExpiration = function(){
-        if (timerDisplay == 0)
-            console.log("timer should stop")
-    }
+    const timerId = setInterval(timerMinusSeconds,1000)  
 }
   
+/// list
+let questionList = [
+    {
+        question:'What is 2+2?',
+            answers: ['10','4', '20', '30'],
+            correctAnswer: '4'
+    },
+    {
+        question:'What is 3+3?',
+            answers: ['10','20', '30', '6'],
+            correctAnswer: '6'
+    },
+    {
+        question:'What is 4+4?',
+            answers: ['8','10', '50', '80'],
+            correctAnswer: '8'
+    },
+    {
+        question:'What is 5+5?',
+            answers: ['25','20', '10', '100'],
+            correctAnswer: '10'
+    },
+]
+
+
+
+
+let currentQsIndex = 0;
+
+/////////// function check answer 
+
+/////
+function showQuestion () {
+    var currentQs = questionList[currentQsIndex]
+
+
+
+    questionElement.innerText = currentQs.question;
+
+
+
+    console.log(currentQs);
+    answerButtonsElement.innerHTML = '';
+    currentQs.answers.forEach(answer => {
+    const button = document.createElement('button')
+    button.textContent = answer;
+    button.classList.add('btn')
+    button.addEventListener('click', checkAnswer)
+    answerButtonsElement.appendChild(button)
+})
+}
+
+
+function checkAnswer(event){
+
+    var currentQ = questionList[currentQsIndex];
+
+    
+    if  (currentQ && currentQ.correctAnswer === event.target.textContent) {
+
+        alert('correct')
+        score += 10;
+    } else {
+        alert('incorrect')
+        score -=5;
+    }
+    console.log(score);
+    currentQsIndex++
+    if(currentQsIndex === questionList.length){
+        endGame();
+    } else {
+        showQuestion();
+    }
+    updateScore();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
