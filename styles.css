@@ -76,18 +76,21 @@ body {
     font-size: 42px;
     display: flex;
     position: absolute;
+    justify-content: flex-start;
     top: 30px;
 }
 
 .highscores{
+    background-color: yellow;
+    margin-right: 
+}
+#timer{
+background-color: green;
+}
+.placeholder{
+    min-width: 800px;
     
-    margin-right: 70vw;
 }
-.timer{
-   
-
-}
-
 #start-btn {
     background:rgb(32, 32, 32);
     border-radius: var(--border-radius);

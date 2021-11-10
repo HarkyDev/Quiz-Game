@@ -5,7 +5,7 @@
 // 5 can save initials and add to high score 
 const startButton = document.getElementById('start-btn')
 const mainGame = document.getElementById('game-container')
-
+let score = 0
 
 startButton.addEventListener('click', startQuiz);
 
@@ -13,9 +13,9 @@ function startQuiz(){
     console.log("game is started")
     startButton.classList.add('hide');
     mainGame.classList.remove('hide'); 
-    startTimer()    
+    startTimer()   
+    score = 0 
 }
-
 
 
 
@@ -43,7 +43,6 @@ var startTimer = function(){
     console.log(timerValue)
     var timerMinusSeconds = function(){
         timerValue --
-        console.log(timerValue)
         timerDisplayEl.innerHTML = "seconds left: " + timerValue
         if (timerValue==0){
         clearInterval(timerId)
@@ -57,5 +56,5 @@ var startTimer = function(){
             console.log("timer should stop")
     }
 }
-
+  
 
