@@ -11,8 +11,33 @@ startButton.addEventListener('click', startQuiz);
 function startQuiz(){
     console.log("game is started")
     startButton.classList.add('hide');
-    mainGame.classList.remove('hide');
+    mainGame.classList.remove('hide');     
 }
+
+
+//timer  function
+let timerDisplay = 5
+
+console.log(timerDisplay)
+var timerMinusSeconds = function(){
+    timerDisplay --
+    console.log(timerDisplay)
+    if (timerDisplay==0){
+    clearInterval(timerId)
+    }
+}
+
+const timerId = setInterval(timerMinusSeconds,1000)
+
+timerExpiration = function(){
+    if (timerDisplay == 0)
+        console.log("timer should stop")
+}
+
+
+
+
+
 
 function nextQuestion(){
 
@@ -21,3 +46,10 @@ function nextQuestion(){
 function selectAnswer(){
 
 }
+
+//question code
+
+//timer code 
+
+//timer function 
+
