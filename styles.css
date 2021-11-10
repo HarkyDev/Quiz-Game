@@ -73,17 +73,18 @@ body {
 /* display none on top bar for now */
 
 .topbar{
-    display: none;
-    
-    flex-direction: row;
-    
+    font-size: 42px;
+    display: flex;
+    position: absolute;
+    top: 30px;
 }
 
 .highscores{
-background-color: red;
+    
+    margin-right: 70vw;
 }
 .timer{
-    background-color: green;
+   
 
 }
 
