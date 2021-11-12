@@ -101,18 +101,30 @@ let questionList = [
             answers: ['25','20', '10', '100'],
             correctAnswer: '10'
     },
+    {
+        question:'',
+            answers: ['','', '', ''],
+            correctAnswer: ''
+    },
 ]
 
 
 
 
 let currentQsIndex = 0;
+////hide questions when done 
+var endOfGame = function(){
+    if (currentQsIndex == 4)
+        mainGame.classList.add('hide');
+       
+}
 
 /////////// function check answer 
 
 /////
 function showQuestion () {
     var currentQs = questionList[currentQsIndex]
+    console.log("the current question index is " + currentQsIndex)
 
 
 
@@ -120,7 +132,7 @@ function showQuestion () {
 
 
 
-    console.log(currentQs);
+    console.log("current qs" + currentQs);
     answerButtonsElement.innerHTML = '';
     currentQs.answers.forEach(answer => {
     const button = document.createElement('button')
@@ -139,10 +151,10 @@ function checkAnswer(event){
     
     if  (currentQ && currentQ.correctAnswer === event.target.textContent) {
 
-        alert('correct')
+        // alert('correct')
         score += 10;
     } else {
-        alert('incorrect')
+        // alert('incorrect')
         score -=5;
     }
     console.log(score);
@@ -152,6 +164,7 @@ function checkAnswer(event){
     } else {
         showQuestion();
     }
+    endOfGame();
     updateScore();
 }
 
