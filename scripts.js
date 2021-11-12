@@ -24,7 +24,7 @@ var answerButtonsElement = document.getElementById('answers-btn')
 const userScore = document.getElementById('yourScore');
 
 
-
+let timerValue = 500
 let score = 0
 
 
@@ -61,9 +61,6 @@ var timerDisplayEl = document.getElementById("timer")
 //300s = 5minutes
 
 var startTimer = function(){
-    let timerValue = 500
-
-
     console.log(timerValue)
     var timerMinusSeconds = function(){
         timerValue --
@@ -143,7 +140,7 @@ function showQuestion () {
 
 
 
-    console.log("current qs" + currentQs);
+  
     answerButtonsElement.innerHTML = '';
     currentQs.answers.forEach(answer => {
     const button = document.createElement('button')
@@ -168,8 +165,11 @@ function checkAnswer(event){
         // alert('incorrect')
         //  add time - time condition here (I think)
         score -=5;
+        timerValue = timerValue - 100
+      
     }
     console.log(score);
+    console.log(currentQsIndex)
     currentQsIndex++
     if(currentQsIndex === questionList.length){
         endGame();
