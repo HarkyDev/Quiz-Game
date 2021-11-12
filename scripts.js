@@ -14,15 +14,9 @@
         // add count function for correct answers 
         // and - time function on timevalue if answer wrong
 
-
-
-
-
-
-
-
 const startButton = document.getElementById('start-btn')
 const mainGame = document.getElementById('game-container')
+const gameOverScreen = document.getElementById('gameOverScreen')
 var questionElement = document.getElementById('questiontext')
 var answerButtonsElement = document.getElementById('answers-btn')
 let score = 0
@@ -60,19 +54,17 @@ var timerDisplayEl = document.getElementById("timer")
 //300s = 5minutes
 
 var startTimer = function(){
-    let timerValue = 300
+    let timerValue = 5
 
 
     console.log(timerValue)
-
-
-    
     var timerMinusSeconds = function(){
         timerValue --
         
         timerDisplayEl.innerHTML = "seconds left: " + timerValue
         if (timerValue==0){
         clearInterval(timerId)
+        endOfGameTimer();
         }
     }
 
@@ -113,10 +105,22 @@ let questionList = [
 
 let currentQsIndex = 0;
 ////hide questions when done 
-var endOfGame = function(){
-    if (currentQsIndex == 4)
+
+
+var endOfGameTimer = function(){
         mainGame.classList.add('hide');
-       
+        gameOverScreen.classList.remove('hide')
+        gameOverScreen.classList.add('gameOverScreen')
+}
+
+
+var endOfGameIndex = function(){
+    if (currentQsIndex == 4){
+        mainGame.classList.add('hide');
+        gameOverScreen.classList.remove('hide')
+        gameOverScreen.classList.add('gameOverScreen')
+        
+    }
 }
 
 /////////// function check answer 
@@ -155,6 +159,7 @@ function checkAnswer(event){
         score += 10;
     } else {
         // alert('incorrect')
+        //  add time - time condition here (I think)
         score -=5;
     }
     console.log(score);
@@ -164,7 +169,7 @@ function checkAnswer(event){
     } else {
         showQuestion();
     }
-    endOfGame();
+    endOfGameIndex();
     updateScore();
 }
 
