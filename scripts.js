@@ -19,7 +19,14 @@ const mainGame = document.getElementById('game-container')
 const gameOverScreen = document.getElementById('gameOverScreen')
 var questionElement = document.getElementById('questiontext')
 var answerButtonsElement = document.getElementById('answers-btn')
+
+
+const userScore = document.getElementById('yourScore');
+
+
+
 let score = 0
+
 
 startButton.addEventListener('click', startQuiz);
 
@@ -54,7 +61,7 @@ var timerDisplayEl = document.getElementById("timer")
 //300s = 5minutes
 
 var startTimer = function(){
-    let timerValue = 5
+    let timerValue = 500
 
 
     console.log(timerValue)
@@ -169,6 +176,9 @@ function checkAnswer(event){
     } else {
         showQuestion();
     }
+
+
+    userScore.textContent ="Your score for the quiz was " + score;
     endOfGameIndex();
     updateScore();
 }
