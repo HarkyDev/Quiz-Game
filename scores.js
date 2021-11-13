@@ -63,9 +63,9 @@ clearBtn.addEventListener('click', function () {
   window.location.reload();
 })
 
-var startAgain = function(){
-    
-}
+// var startAgain = function(){
+
+// }
 
 
 
