@@ -1,3 +1,4 @@
+
 // 1 start button starts game
 // 2 when answer is selected next question is then presented
 // 3 wrong btncut time on the timer
@@ -19,16 +20,17 @@ const mainGame = document.getElementById('game-container')
 const gameOverScreen = document.getElementById('gameOverScreen')
 var questionElement = document.getElementById('questiontext')
 var answerButtonsElement = document.getElementById('answers-btn')
+const correctTag = document.getElementById('correctTag')
+startButton.addEventListener('click', startQuiz);
+
 
 
 const userScore = document.getElementById('yourScore');
 
 
-let timerValue = 500
+let timerValue = 3
 let score = 0
 
-
-startButton.addEventListener('click', startQuiz);
 
 function startQuiz(){
     console.log("game is started")
@@ -66,7 +68,7 @@ var startTimer = function(){
         timerValue --
         
         timerDisplayEl.innerHTML = "seconds left: " + timerValue
-        if (timerValue==0){
+        if (timerValue <= 0){
         clearInterval(timerId)
         endOfGameTimer();
         }
@@ -133,14 +135,7 @@ var endOfGameIndex = function(){
 function showQuestion () {
     var currentQs = questionList[currentQsIndex]
     console.log("the current question index is " + currentQsIndex)
-
-
-
     questionElement.innerText = currentQs.question;
-
-
-
-  
     answerButtonsElement.innerHTML = '';
     currentQs.answers.forEach(answer => {
     const button = document.createElement('button')
@@ -165,7 +160,8 @@ function checkAnswer(event){
         // alert('incorrect')
         //  add time - time condition here (I think)
         score -=5;
-        timerValue = timerValue - 100
+        timerValue = timerValue - 10
+        /// time working 
       
     }
     console.log(score);
@@ -175,35 +171,42 @@ function checkAnswer(event){
         endGame();
     } else {
         showQuestion();
+        localStorage.setItem('score', score);
     }
 
 
     userScore.textContent ="Your score for the quiz was " + score;
     endOfGameIndex();
-    updateScore();
 }
 
 
+var clearStorage = function(){
+    Storage.clear()
+}
 
+//////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
+/////////
 
+// var score = 30
 
+// let userInput = document.getElementById('userInput');
+// let submitBtn = document.getElementById('submitBtn');
 
+// // submitBtn.addEventListener('click', getInfo);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var getInfo = function () {
+//  userInfo = userInput.value
+// }
 
 
 

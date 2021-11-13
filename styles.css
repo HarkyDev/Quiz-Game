@@ -127,6 +127,27 @@ body {
     outline: 4px solid orange;
 }
 
+.playAgainGameOverBtn{
+    text-transform: uppercase;
+    background:rgb(32, 32, 32);
+    border-radius: var(--border-radius);
+	color: inherit;
+	border: none;
+    text-align: start;
+    padding-left: 20px;
+    padding: 20px;
+	font: inherit;
+	cursor: pointer;
+    text-align: center;
+	outline: inherit;
+    margin: 8px;
+
+}
+.playAgainGameOverBtn:hover {
+    background:rgb(44, 44, 44);
+    outline: 4px solid orange;
+}
+
 
 .gameOverScreen {
     display: flex;
