@@ -57,7 +57,7 @@ body {
 	cursor: pointer;
 	outline: inherit;
     margin: 8px;
-    min-width: 98.2%;
+    min-width: 100%;
 }
 
 .btn:hover {
@@ -81,7 +81,6 @@ body {
 
 .highscores{
   
-    margin-right: 
 }
 #timer{
 
@@ -171,4 +170,55 @@ body {
 
 .hide{
     display: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    min-height: 100px;
+    min-width: 800px;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+}
+
+.enterName {
+    text-align: center;
+}
+
+.form button {
+    text-align: center;
+}
+
+.inputsection{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}
+.clearbtncontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.playAgain {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.finalButtons{
+    display: flex;
+}
+
+
+a {
+    color: inherit;
+  text-decoration: inherit;
 }

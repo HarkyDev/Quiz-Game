@@ -3,6 +3,7 @@ var score = localStorage.getItem('score');
 var userInput = document.getElementById("userInput")
 var submitBtn = document.getElementById("submitBtn")
 var clearBtn = document.getElementById("clearBtn")
+var playAgain = document.getElementById("playAgain")
 let records = JSON.parse(localStorage.getItem('records'));
 
 // highscores list element 
@@ -62,6 +63,9 @@ clearBtn.addEventListener('click', function () {
   window.location.reload();
 })
 
+var startAgain = function(){
+    
+}
 
 
 

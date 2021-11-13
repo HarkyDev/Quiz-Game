@@ -9,44 +9,44 @@
     <title>Highscore page</title>
 </head>
 <body>
-    <header class="header">
-         <h2 class="scoretext">
-            View highscore
-            </h2>
-        <h1>
-            Javascript quiz
-        </h1>
-    </header>
-
-    
-    
+         <h1 class="scoretext">
+           Highscores
+            </h1>
     <div class="holder">
         <section class="infocontainer">
             <!-- <p id="scorename">Name: </p>
-            <p id="highscorenumber">Highscore = </p> -->
-            
-        </div>
-            <div class="inputsection">
+                <p id="highscorenumber">Highscore = </p> -->
+                
+            </div>
+            <div  class="inputsection">
                 
                 <form class="form">
-                    <label for="">Your Name here</label>
+                    <label class="enterName">Your Name here</label>
                     <input type="text" name="" id="userInput">
                     <button type="submit" class="btn" id="submitBtn">Submit</button>
                 </form>
             </div>
-            
-            <div class="main-div">
-                <ul id="my-list">
-            
-                </ul>
+            <div class="threeBtns">
+                <div class="finalButtons">
+                        <div class= "clearbtncontainer">
+                            <button type="button"   class="btn" onclick="clearInfo()" id="clearBtn">Clear Scores</button>
+                        </div>
+                        <div id="playAgain" class= "playAgain">
+                            <a href="index.html">
+                            <button type="button"   class="btn" >Play Again</button>
+                            </a>  
+                        </div>
+                </div>
+                </div>
+                <div class="main-div">
+                    <ul id="my-list">
+                        
+                    </ul>
             </div>
-        
-        <div class= "clearbtncontainer">
-            <button type="button"   class="btn" onclick="clearInfo()" id="clearBtn">Clear Scores</button>
-        </div>
 
 
             <script src="scores.js"></script>
         </section>
+    </div>    
 </body>
 </html> 
