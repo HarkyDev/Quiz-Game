@@ -243,3 +243,8 @@ a {
     background:rgb(44, 44, 44);
     outline: 4px solid orange;
 }
+
+li{
+    text-align: ce;
+    list-style: none;
+}

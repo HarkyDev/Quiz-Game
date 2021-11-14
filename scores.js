@@ -6,7 +6,6 @@ var clearBtn = document.getElementById("clearBtn")
 var playAgain = document.getElementById("playAgain")
 let records = JSON.parse(localStorage.getItem('records'));
 
-// highscores list element 
 const myList = document.getElementById('my-list');
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -62,77 +61,3 @@ clearBtn.addEventListener('click', function () {
   localStorage.clear()
   window.location.reload();
 })
-
-// var startAgain = function(){
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // var score = 
-
-
-
-
-// // var getInfo = function(){
-// //   userInfo = userInput.value  
-// //   console.log(userInfo + " " + score)   
-// //   let newListItem = document.createElement('li');
-// //     newListItem.textContent = userInfo + score;
-// //     myList.appendChild(newListItem)
-// // }
-
-
-// // new list item
-
-
-// // user[0].nameOf = 'Alistairtest';
-// // user[0].score = '100';
-
-// // var storageScore = JSON.parse(localStorage.getItem('score', user.score));
-// // var storagenameOf = JSON.parse(localStorage.getItem('nameOf', user.nameOf));
-
-// // let scores = JSON.parse(localStorage.getItem('score'));
-// // console.log(scores);
-
-
-// // console.log(storageScore[0].nameOf);
-// // console.log(storageScore[0].score);
-
-// //you need to change this so it works. 
