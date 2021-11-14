@@ -18,19 +18,19 @@ let questionList = [
         correctAnswer: 'JavaScript'
     },
     {
-        question:'What is 3+3?',
-        answers: ['10','20', '30', '6'],
-        correctAnswer: '6'
+        question:'In JavaScript what is the fancy name for a list?',
+        answers: ['Collection','Array', 'Collective', 'Ajoin'],
+        correctAnswer: 'Array'
     },
     {
-        question:'What is 4+4?',
-        answers: ['8','10', '50', '80'],
-        correctAnswer: '8'
+        question:'Which of these does not define anything?',
+        answers: ['Var','Const', 'Let', 'Digi'],
+        correctAnswer: 'Digi'
     },
     {
-        question:'What is 5+5?',
-        answers: ['25','20', '10', '100'],
-        correctAnswer: '10'
+        question:'Who designed JavaScript?',
+        answers: ['Brendan Eich','Brendan Fraser', 'Brendan Gleeson', 'Chuck Liddell'],
+        correctAnswer: 'Brendan Eich'
     },
     {
         question:'',
