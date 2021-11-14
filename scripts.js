@@ -28,7 +28,7 @@ startButton.addEventListener('click', startQuiz);
 const userScore = document.getElementById('yourScore');
 
 
-let timerValue = 3
+let timerValue = 60
 let score = 0
 
 
@@ -80,9 +80,9 @@ var startTimer = function(){
 /// list
 let questionList = [
     {
-        question:'What is 2+2?',
-            answers: ['10','4', '20', '30'],
-            correctAnswer: '4'
+        question:'"js" is short hand for what?',
+            answers: ['JavaScript','JavaStandard', 'Jason Statham', 'JudoScipt'],
+            correctAnswer: 'JavaScript'
     },
     {
         question:'What is 3+3?',
